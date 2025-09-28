@@ -17,63 +17,22 @@ const Translator = () => {
     { code: "af", name: "Afrikaans" },
     { code: "sq", name: "Albanian" },
     { code: "ar", name: "Arabic" },
-    { code: "hy", name: "Armenian" },
     { code: "bn", name: "Bengali" },
-    { code: "bs", name: "Bosnian" },
-    { code: "ca", name: "Catalan" },
-    { code: "hr", name: "Croatian" },
-    { code: "cs", name: "Czech" },
-    { code: "da", name: "Danish" },
-    { code: "nl", name: "Dutch" },
+    { code: "zh-CN", name: "Chinese (Simplified)" },
+    { code: "zh-TW", name: "Chinese (Traditional)" },
     { code: "en", name: "English" },
-    { code: "eo", name: "Esperanto" },
-    { code: "et", name: "Estonian" },
-    { code: "tl", name: "Filipino" },
-    { code: "fi", name: "Finnish" },
     { code: "fr", name: "French" },
     { code: "de", name: "German" },
-    { code: "el", name: "Greek" },
-    { code: "gu", name: "Gujarati" },
     { code: "hi", name: "Hindi" },
-    { code: "hu", name: "Hungarian" },
-    { code: "is", name: "Icelandic" },
-    { code: "id", name: "Indonesian" },
-    { code: "it", name: "Italian" },
     { code: "ja", name: "Japanese" },
-    { code: "jw", name: "Javanese" },
-    { code: "km", name: "Khmer" },
     { code: "ko", name: "Korean" },
-    { code: "la", name: "Latin" },
-    { code: "lv", name: "Latvian" },
-    { code: "lt", name: "Lithuanian" },
-    { code: "ml", name: "Malayalam" },
-    { code: "mr", name: "Marathi" },
-    { code: "my", name: "Myanmar (Burmese)" },
-    { code: "ne", name: "Nepali" },
-    { code: "no", name: "Norwegian" },
-    { code: "pl", name: "Polish" },
-    { code: "pt", name: "Portuguese" },
-    { code: "pa", name: "Punjabi" },
-    { code: "ro", name: "Romanian" },
     { code: "ru", name: "Russian" },
-    { code: "sr", name: "Serbian" },
-    { code: "si", name: "Sinhala" },
-    { code: "sk", name: "Slovak" },
-    { code: "sl", name: "Slovenian" },
     { code: "es", name: "Spanish" },
-    { code: "su", name: "Sundanese" },
-    { code: "sv", name: "Swedish" },
     { code: "ta", name: "Tamil" },
     { code: "te", name: "Telugu" },
-    { code: "th", name: "Thai" },
     { code: "tr", name: "Turkish" },
-    { code: "uk", name: "Ukrainian" },
     { code: "ur", name: "Urdu" },
     { code: "vi", name: "Vietnamese" },
-    { code: "cy", name: "Welsh" },
-    { code: "xh", name: "Xhosa" },
-    { code: "yi", name: "Yiddish" },
-    { code: "zu", name: "Zulu" },
   ];
 
   const translateText = async () => {
@@ -105,6 +64,13 @@ const Translator = () => {
     lang.name.toLowerCase().includes(search.toLowerCase())
   );
 
+  const clearAll = () => {
+    setText("");
+    setTranslatedText("");
+    setTargetLang("");
+    setSearch("");
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -115,21 +81,15 @@ const Translator = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Clear text function
-  const clearText = () => {
-    setText("");
-    setTranslatedText("");
-    setTargetLang("");
-    setSearch("");
-  };
-
   return (
-    <div className="min-h-screen flex items-start justify-center px-4 pt-50 bg-black text-white">
+    <div className="min-h-screen flex items-center justify-center pt-20 px-4 md:px-8">
       <div
-        className="rounded-3xl border border-white/20 bg-white/5 dark:bg-gray-900/10 
-        backdrop-blur-2xl shadow-xl p-6 md:p-10 space-y-6 w-full max-w-3xl"
+        className="rounded-3xl border border-white/20 dark:border-white/10 
+        bg-white/5 dark:bg-gray-900/10 
+        backdrop-blur-2xl shadow-xl 
+        p-6 md:p-10 space-y-6 w-full max-w-3xl"
       >
-        <h1 className="text-2xl md:text-3xl font-bold text-center">
+        <h1 className="text-2xl md:text-3xl font-bold text-center text-white">
           🌐 Multi-Language Translator
         </h1>
 
@@ -142,17 +102,6 @@ const Translator = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-
-        {/* Clear Button */}
-        {text && (
-          <button
-            onClick={clearText}
-            className="w-full py-2 mt-4 rounded-2xl font-semibold 
-            bg-red-600 hover:bg-red-700 text-white"
-          >
-            Clear All
-          </button>
-        )}
 
         {/* Target Language Dropdown */}
         <div className="relative" ref={dropdownRef}>
@@ -223,7 +172,7 @@ const Translator = () => {
           )}
         </div>
 
-        {/* Button */}
+        {/* Translate Button */}
         <button
           onClick={translateText}
           disabled={loading}
@@ -233,9 +182,20 @@ const Translator = () => {
           {loading ? "Translating..." : "Translate"}
         </button>
 
+        {/* Conditionally Render Clear All Button */}
+        {text.trim() && (
+          <button
+            onClick={clearAll}
+            className="w-full py-3.5 rounded-2xl font-semibold 
+            bg-red-600 hover:bg-red-700 text-white mt-4"
+          >
+            Clear All
+          </button>
+        )}
+
         {/* Output */}
         {translatedText && (
-          <div className="p-4 rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 text-lg">
+          <div className="w-full p-4 rounded-xl bg-black/30 backdrop-blur-sm border border-white/10 text-lg text-white">
             {translatedText}
           </div>
         )}

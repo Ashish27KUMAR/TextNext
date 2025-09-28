@@ -18,28 +18,34 @@ const Starfield = ({ theme }) => {
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
-    };
-    resize();
-    window.addEventListener("resize", resize);
+      const width = window.innerWidth;
+      const height = window.innerHeight;
 
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr); // Make sure the canvas scales properly on high DPI displays
+    };
+
+    resize(); // Initial resize on mount
+    window.addEventListener("resize", resize); // Resize listener
+
+    // Ensure stars only initialized once
     if (starsRef.current.length === 0) {
-      const numStars = 100;
+      const numStars = window.innerWidth < 600 ? 50 : 100; // Fewer stars for small screens
       starsRef.current = Array.from({ length: numStars }, () => ({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
         r: Math.random() * 2 + 0.5,
-        dx: (Math.random() - 0.5) * starSpeed, // 👈 speed control here
-        dy: (Math.random() - 0.5) * starSpeed, // 👈 speed control here
+        dx: (Math.random() - 0.5) * starSpeed,
+        dy: (Math.random() - 0.5) * starSpeed,
         opacity: Math.random() * 0.5 + 0.5,
         twinkle: Math.random() * 0.02,
         color: theme === "dark" ? 255 : 0,
       }));
     }
 
+    // Initialize diagonal stars
     if (diagStarsRef.current.length === 0) {
       const numDiagStars = 2;
       diagStarsRef.current = Array.from({ length: numDiagStars }, () => ({
@@ -61,6 +67,7 @@ const Starfield = ({ theme }) => {
 
       const targetColor = theme === "dark" ? 255 : 0;
 
+      // Animate regular stars
       starsRef.current.forEach((s) => {
         s.x += s.dx;
         s.y += s.dy;
@@ -83,6 +90,7 @@ const Starfield = ({ theme }) => {
         ctx.fill();
       });
 
+      // Animate diagonal stars
       diagStarsRef.current.forEach((ds) => {
         ds.x += ds.speed;
         ds.y += ds.speed * 0.6;
