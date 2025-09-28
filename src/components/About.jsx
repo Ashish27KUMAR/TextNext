@@ -2,51 +2,72 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 pt-28 bg-black text-white">
-      <div className="w-full max-w-4xl rounded-3xl border border-white/10 p-8 shadow-xl space-y-10">
+    <div className="min-h-screen flex flex-col items-start justify-center px-4 pt-28 mb-6">
+      <div
+        className="rounded-3xl border border-black/10 dark:border-white/10 
+        bg-white/90 dark:bg-gray-900/10
+        backdrop-blur-2xl shadow-xl 
+        p-6 md:p-10 space-y-6 w-full max-w-4xl text-left transition-colors duration-500"
+      >
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-extrabold text-center text-indigo-400">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
           About This Project
         </h1>
-        <p className="text-gray-300 text-lg md:text-xl text-center">
+        <p className="text-gray-700 dark:text-gray-300 text-lg">
           A simple and elegant multi-language translator powered by{" "}
-          <span className="font-semibold text-indigo-400">React</span>,{" "}
-          <span className="font-semibold text-indigo-400">TailwindCSS</span>,
-          and <span className="font-semibold text-indigo-400">RapidAPI</span>.
+          <span className="font-semibold text-indigo-700 dark:text-indigo-400">
+            React
+          </span>
+          ,{" "}
+          <span className="font-semibold text-indigo-700 dark:text-indigo-400">
+            TailwindCSS
+          </span>
+          , and{" "}
+          <span className="font-semibold text-indigo-700 dark:text-indigo-400">
+            RapidAPI
+          </span>
+          .
         </p>
 
         {/* Sections */}
-        <div className="grid md:grid-cols-2 gap-6 mt-8">
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
           {/* What is this project */}
-          <div className="rounded-2xl bg-gray-800/50 backdrop-blur-md p-6 shadow-lg border border-white/20">
-            <h2 className="text-2xl font-semibold text-indigo-400 mb-4">
+          <div
+            className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
+            backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
+          >
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
               What is this project?
             </h2>
-            <p className="text-gray-300">
-              This project is a multi-language translator where users can input
-              text in English and instantly translate it into multiple
-              languages. The interface is simple, fast, and user-friendly.
+            <p className="text-gray-700 dark:text-gray-300">
+              It’s a multi-language translator where you can type text in
+              English and translate it into multiple languages instantly.
             </p>
           </div>
 
           {/* How it works */}
-          <div className="rounded-2xl bg-gray-800/50 backdrop-blur-md p-6 shadow-lg border border-white/20">
-            <h2 className="text-2xl font-semibold text-indigo-400 mb-4">
+          <div
+            className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
+            backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
+          >
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
               How does it work?
             </h2>
-            <p className="text-gray-300">
-              The app uses the Google Translate API via RapidAPI to fetch
-              translations in real-time. As you type, translations appear
-              instantly, providing a seamless translation experience.
+            <p className="text-gray-700 dark:text-gray-300">
+              The translator uses Google Translate API through RapidAPI. It
+              fetches translations in real time and displays them instantly.
             </p>
           </div>
 
           {/* Tech stack */}
-          <div className="rounded-2xl bg-gray-800/50 backdrop-blur-md p-6 shadow-lg border border-white/20">
-            <h2 className="text-2xl font-semibold text-indigo-400 mb-4">
+          <div
+            className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
+            backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
+          >
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
               Tech Stack
             </h2>
-            <ul className="text-gray-300 space-y-2">
+            <ul className="text-gray-700 dark:text-gray-300 space-y-1">
               <li>React</li>
               <li>TailwindCSS</li>
               <li>RapidAPI (Google Translate)</li>
@@ -55,14 +76,16 @@ const About = () => {
           </div>
 
           {/* Future Features */}
-          <div className="rounded-2xl bg-gray-800/50 backdrop-blur-md p-6 shadow-lg border border-white/20">
-            <h2 className="text-2xl font-semibold text-indigo-400 mb-4">
+          <div
+            className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
+            backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
+          >
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
               Future Plans
             </h2>
-            <p className="text-gray-300">
-              Future updates will include features such as saving translations,
-              text-to-speech functionality, and support for more languages and
-              input types.
+            <p className="text-gray-700 dark:text-gray-300">
+              More features like saving translations, text-to-speech, and
+              multi-language input support will be added in future updates.
             </p>
           </div>
         </div>

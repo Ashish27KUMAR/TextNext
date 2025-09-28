@@ -106,7 +106,8 @@ const Navbar = () => {
             {/* Center: "TextNext" */}
             <div className="flex-1 flex justify-center">
               <span className="text-2xl text-white font-semibold">
-                TextNext
+                <span className="text-indigo-400">Text</span>
+                <span className="text-green-400">Next</span>
               </span>
             </div>
 
