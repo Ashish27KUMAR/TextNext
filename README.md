@@ -1,16 +1,25 @@
-# React + Vite
+# TextNext Translator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-language translator app built with React, integrated with the Google Translate API. Users can input text in English and translate it into various languages.
+## Features
 
-Currently, two official plugins are available:
+- Translate text from English to over 50 languages.
+- Easy-to-use user interface with language dropdown and text input box.
+- Fully responsive design to support all devices.
+- Integration with the Google Translate API.
+- Live translation and clear input functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
 
-## React Compiler
+**Home Page**:<img width="1895" height="926" alt="Screenshot 2025-09-28 054243" src="https://github.com/user-attachments/assets/4f07753a-5bdd-49a9-9f55-bf60fc58c056" />
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**About Page**:<img width="1897" height="927" alt="Screenshot 2025-09-28 054258" src="https://github.com/user-attachments/assets/404fe076-2ce5-4863-ba0b-4cabf7a11a1f" />
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Axios**: Promise-based HTTP client for making requests to the API.
+- **Tailwind CSS**: Utility-first CSS framework for styling the application.
+- **React Icons**: For using vector icons in the app.
+- **Google Translate API**: For language translation functionality.
