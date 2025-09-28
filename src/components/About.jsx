@@ -10,7 +10,7 @@ const About = () => {
         p-6 md:p-10 space-y-6 w-full max-w-4xl text-left transition-colors duration-500"
       >
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-3xl md:text-4xl flex justify-center font-bold text-gray-900 dark:text-indigo-400">
           About This Project
         </h1>
         <p className="text-gray-700 dark:text-gray-300 text-lg">
