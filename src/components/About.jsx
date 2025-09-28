@@ -1,4 +1,4 @@
-import React from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -10,23 +10,17 @@ const About = () => {
         p-6 md:p-10 space-y-6 w-full max-w-4xl text-left transition-colors duration-500"
       >
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl flex justify-center font-bold text-gray-900 dark:text-indigo-400">
+        <h1 className="text-3xl md:text-4xl flex justify-center font-bold dark:text-indigo-400">
           About This Project
         </h1>
-        <p className="text-gray-700 dark:text-gray-300 text-lg">
+        <p className="dark:text-gray-300 text-lg">
           A simple and elegant multi-language translator powered by{" "}
-          <span className="font-semibold text-indigo-700 dark:text-indigo-400">
-            React
-          </span>
-          ,{" "}
-          <span className="font-semibold text-indigo-700 dark:text-indigo-400">
+          <span className="font-semibold dark:text-indigo-400">React</span>,{" "}
+          <span className="font-semibold dark:text-indigo-400">
             TailwindCSS
           </span>
           , and{" "}
-          <span className="font-semibold text-indigo-700 dark:text-indigo-400">
-            RapidAPI
-          </span>
-          .
+          <span className="font-semibold dark:text-indigo-400">RapidAPI</span>.
         </p>
 
         {/* Sections */}
@@ -36,10 +30,10 @@ const About = () => {
             className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
             backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
           >
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <h2 className="text-xl font-semibold dark:text-white mb-2">
               What is this project?
             </h2>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="dark:text-gray-300">
               It’s a multi-language translator where you can type text in
               English and translate it into multiple languages instantly.
             </p>
@@ -50,10 +44,10 @@ const About = () => {
             className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
             backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
           >
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <h2 className="text-xl font-semibold dark:text-white mb-2">
               How does it work?
             </h2>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="dark:text-gray-300">
               The translator uses Google Translate API through RapidAPI. It
               fetches translations in real time and displays them instantly.
             </p>
@@ -64,10 +58,10 @@ const About = () => {
             className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
             backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
           >
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <h2 className="text-xl font-semibold dark:text-white mb-2">
               Tech Stack
             </h2>
-            <ul className="text-gray-700 dark:text-gray-300 space-y-1">
+            <ul className="dark:text-gray-300 space-y-1">
               <li>React</li>
               <li>TailwindCSS</li>
               <li>RapidAPI (Google Translate)</li>
@@ -80,14 +74,68 @@ const About = () => {
             className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
             backdrop-blur-lg p-6 shadow-md border border-black/10 dark:border-white/10"
           >
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <h2 className="text-xl font-semibold dark:text-white mb-2">
               Future Plans
             </h2>
-            <p className="text-gray-700 dark:text-gray-300">
+            <p className="dark:text-gray-300">
               More features like saving translations, text-to-speech, and
               multi-language input support will be added in future updates.
             </p>
           </div>
+        </div>
+
+        {/* Meet the Creator Section */}
+        <div
+          className="rounded-2xl bg-gray-100 dark:bg-gray-800/40 
+          backdrop-blur-lg p-6 mt-6 shadow-md border border-black/10 dark:border-white/10"
+        >
+          <h2 className="text-xl font-semibold dark:text-white mb-2">
+            Meet the Creator
+          </h2>
+          <p className="dark:text-gray-300">
+            Hi, I'm{" "}
+            <span className="font-semibold dark:text-indigo-500">
+              Ashish Kumar
+            </span>
+            , a passionate web developer who built this multi-language
+            translator as a project to explore the power of React and
+            TailwindCSS. My goal was to create a clean, simple, and effective
+            translation tool to make language learning and communication more
+            accessible.
+          </p>
+          <p className="dark:text-indigo-400 mt-4">
+            Feel free to connect with me:
+          </p>
+          <ul className="dark:text-gray-300 space-y-1 mt-2 flex space-x-4">
+            <li>
+              <a
+                href="https://github.com/yourgithub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-indigo-500"
+              >
+                <FaGithub className="hover:text-gray-500" size={25} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/yourlinkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-indigo-500"
+              >
+                <FaLinkedin size={25} />
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:your-email@example.com"
+                className="hover:text-indigo-500"
+              >
+                <FaWhatsapp className="hover:text-green-500" size={25} />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

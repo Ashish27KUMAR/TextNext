@@ -29,6 +29,11 @@ function App() {
     document.documentElement.classList.add("dark");
   }, []);
 
+  // Scroll to top on location change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   // Page transition variants with ease-in-out
   const pageVariants = {
     initial: { opacity: 0, y: 30 },
