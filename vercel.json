@@ -1,12 +1,16 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
-  "fallbacks": {
-    "404": "/404.html"
-  }
+  "cleanUrls": true
 }
