@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import LogoImg from "../assets/ALL Logos.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -95,7 +96,7 @@ const Navbar = () => {
             <div className="bg-gray-900 px-2 py-1 rounded-full shadow flex items-center">
               <div className="w-10 h-10 flex items-center justify-center">
                 <img
-                  src="/src/assets/ALL Logos.png"
+                  src={LogoImg}
                   alt="Logo"
                   className="object-contain rounded-full hover:cursor-pointer"
                 />
