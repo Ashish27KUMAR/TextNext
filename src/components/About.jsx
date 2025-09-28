@@ -109,7 +109,7 @@ const About = () => {
           <ul className="dark:text-gray-300 space-y-1 mt-2 flex space-x-4">
             <li>
               <a
-                href="https://github.com/yourgithub"
+                href="https://github.com/Ashish27KUMAR"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-indigo-500"
@@ -119,7 +119,7 @@ const About = () => {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/yourlinkedin"
+                href="https://www.linkedin.com/in/ashish-kumar-8059b5302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-indigo-500"
@@ -129,7 +129,7 @@ const About = () => {
             </li>
             <li>
               <a
-                href="mailto:your-email@example.com"
+                href="https://wa.me/qr/HF2WZBJI3DMWA1"
                 className="hover:text-indigo-500"
               >
                 <FaWhatsapp className="hover:text-green-500" size={25} />

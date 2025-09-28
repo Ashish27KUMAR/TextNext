@@ -40,7 +40,7 @@ const Footer = () => {
             About
           </Link>
           <a
-            href="https://github.com/Ashish27KUMAR"
+            href="https://github.com/Ashish27KUMAR/TextNext"
             target="_blank"
             rel="noopener noreferrer"
             className={`hover:text-indigo-500 transition-colors duration-300 ${
